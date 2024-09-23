@@ -26,6 +26,14 @@ jobs:
       run: sudo yarn install  # npm을 사용하여 의존성 설치
       working-directory: ./getting-started-todo-app/backend
 
-    - name: 5. 테스트 실행  # 테스트 실행 단계
+    - name: 5. 서버실행 확인  # 테스트 실행 단계
+      run: |
+        sudo yarn dev &  # npm 테스트 명령어로 테스트 실행
+        $! > process.pid
+        sleep 5
+        kill $(cat process.pid)
+      working-directory: ./getting-started-todo-app/backend
+
+    - name: 6. 서버실행 종료  # 테스트 실행 단계
       run: sudo yarn dev  # npm 테스트 명령어로 테스트 실행
       working-directory: ./getting-started-todo-app/backend
