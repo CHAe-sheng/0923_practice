@@ -28,7 +28,7 @@ jobs:
 
     - name: 5. 서버실행 확인  # 테스트 실행 단계
       run: |
-        sudo yarn dev &> > (tee output.log) &
+        sudo yarn dev &> >(tee output.log) &
         echo $! > process.pid
         sleep 5
         kill $(cat process.pid)
