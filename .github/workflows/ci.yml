@@ -9,7 +9,6 @@ on: push
 jobs:
   test_0923:  # 작업 이름
     runs-on: ubuntu-latest  # 작업을 실행할 환경
-
     strategy:
       matrix:
         node-version: [20]  # 사용할 Node.js 버전 (예: 16)
@@ -25,8 +24,8 @@ jobs:
           
     - name: 4. 의존성 설치  # 의존성 설치 단계
       run: yarn install  # npm을 사용하여 의존성 설치
-      working-directory: ./getting-started-todo-app
+      working-directory: ./getting-started-todo-app/backend
 
     - name: 5. 테스트 실행  # 테스트 실행 단계
       run: yarn dev  # npm 테스트 명령어로 테스트 실행
-      # working-directory: ./getting-started-todo-app
+      working-directory: ./getting-started-todo-app/backend
