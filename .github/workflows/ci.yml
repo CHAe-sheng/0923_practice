@@ -23,9 +23,9 @@ jobs:
         node-version: ${{ matrix.node-version }}  # 매트릭스에서 정의한 Node.js 버전 사용
           
     - name: 4. 의존성 설치  # 의존성 설치 단계
-      run: yarn install  # npm을 사용하여 의존성 설치
+      run: sudo yarn install  # npm을 사용하여 의존성 설치
       working-directory: ./getting-started-todo-app/backend
 
     - name: 5. 테스트 실행  # 테스트 실행 단계
-      run: yarn dev  # npm 테스트 명령어로 테스트 실행
+      run: sudo yarn dev  # npm 테스트 명령어로 테스트 실행
       working-directory: ./getting-started-todo-app/backend
