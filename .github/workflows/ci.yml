@@ -22,10 +22,11 @@ jobs:
       uses: actions/setup-node@v4  # Node.js 환경 설정
       with:
         node-version: ${{ matrix.node-version }}  # 매트릭스에서 정의한 Node.js 버전 사용
-        cache: 'npm'
           
     - name: 4. 의존성 설치  # 의존성 설치 단계
-      run: npm ci  # npm을 사용하여 의존성 설치
+      run: yarn install  # npm을 사용하여 의존성 설치
+      working-directory: ./getting-started-todo-app
 
     - name: 5. 테스트 실행  # 테스트 실행 단계
-      run: npm test  # npm 테스트 명령어로 테스트 실행
+      run: yarn dev  # npm 테스트 명령어로 테스트 실행
+      working-directory: ./getting-started-todo-app
