@@ -15,6 +15,7 @@ app.get('/api/items', getItems);
 app.post('/api/items', addItem);
 app.put('/api/items/:id', updateItem);
 app.delete('/api/items/:id', deleteItem);
+app.get('/api/team', team);
 
 db.init()
     .then(() => {
