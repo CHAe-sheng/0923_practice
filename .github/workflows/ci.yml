@@ -28,5 +28,5 @@ jobs:
       working-directory: ./getting-started-todo-app
 
     - name: 5. 테스트 실행  # 테스트 실행 단계
-      run: nodemon src/index.js  # npm 테스트 명령어로 테스트 실행
+      run: yarn nodemon src/index.js  # npm 테스트 명령어로 테스트 실행
       # working-directory: ./getting-started-todo-app
