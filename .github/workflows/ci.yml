@@ -33,7 +33,3 @@ jobs:
         sleep 5
         kill $(cat process.pid)
       working-directory: ./getting-started-todo-app/backend
-
-    - name: 6. 서버실행 종료  # 테스트 실행 단계
-      run: sudo yarn dev  # npm 테스트 명령어로 테스트 실행
-      working-directory: ./getting-started-todo-app/backend
